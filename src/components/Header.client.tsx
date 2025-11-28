@@ -1,9 +1,8 @@
-"use client"; // IMPORTANTE: Los hooks como useSession solo funcionan en el cliente
+"use client"; 
 import Link from "next/link";
-// Importamos los hooks de NextAuth
+
 import { signIn, signOut, useSession } from "next-auth/react";
 const Header = () => {
- // useSession es el hook que nos dice si el usuario está logueado o no
  const { data: session, status } = useSession();
  return (
 <header className="bg-white border-b border-gray-200 px-6 py-4 flex justify-between items-center shadow-sm">
@@ -11,7 +10,7 @@ const Header = () => {
        Mi Tienda
 </Link>
 <div className="flex items-center gap-4">
-       {/* LÓGICA SENIOR: Manejo de estados de carga */}
+       {}
        {status === "loading" ? (
 <p className="text-sm text-gray-500">Cargando...</p>
        ) : session ? (

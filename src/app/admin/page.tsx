@@ -39,41 +39,44 @@ export default function AdminPage() {
          Panel de Administración
 </h1>
 <form onSubmit={handleSubmit} className="space-y-5">
-         {/* Campo Nombre */}
-<div>
-<label className="block text-sm font-medium text-gray-700 mb-1">
-             Nombre del Producto
-</label>
-<input
-             type="text"
-             value={name}
-             onChange={(e) => setName(e.target.value)}
-             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition"
-             placeholder="Ej. Audífonos Sony"
-             required
-           />
-</div>
-         {/* Campo Precio */}
-<div>
-<label className="block text-sm font-medium text-gray-700 mb-1">
-             Precio ($)
-</label>
-<input
-             type="number"
-             value={price}
-             onChange={(e) => setPrice(e.target.value)}
-             className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-black focus:border-transparent outline-none transition"
-             placeholder="0.00"
-           />
-</div>
-         {/* Botón de Guardar */}
-<button
-           type="submit"
-           disabled={loading}
-           className="w-full bg-black text-white py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
->
-           {loading ? "Guardando..." : "Crear Producto"}
-</button>
+  {/* Campo Nombre */}
+  <div>
+    <label className="block text-sm font-medium text-gray-700 mb-1">
+      Nombre del Producto
+    </label>
+    <input
+      type="text"
+      value={name}
+      onChange={(e) => setName(e.target.value)}
+      // AGREGAMOS 'text-black' AQUÍ ABAJO 👇
+      className="w-full px-4 py-2 border border-gray-300 rounded-lg text-black focus:ring-2 focus:ring-black focus:border-transparent outline-none transition"
+      placeholder="Ej. Audífonos Sony"
+      required
+    />
+  </div>
+
+  {/* Campo Precio */}
+  <div>
+    <label className="block text-sm font-medium text-gray-700 mb-1">
+      Precio ($)
+    </label>
+    <input
+      type="number"
+      value={price}
+      onChange={(e) => setPrice(e.target.value)}
+      // AGREGAMOS 'text-black' TAMBIÉN AQUÍ 👇
+      className="w-full px-4 py-2 border border-gray-300 rounded-lg text-black focus:ring-2 focus:ring-black focus:border-transparent outline-none transition"
+      placeholder="0.00"
+    />
+  </div>
+
+  <button
+    type="submit"
+    disabled={loading}
+    className="w-full bg-black text-white py-3 rounded-lg font-medium hover:bg-gray-800 transition-colors disabled:opacity-50"
+  >
+    {loading ? "Guardando..." : "Crear Producto"}
+  </button>
 </form>
 <div className="mt-6 text-center border-t pt-4">
 <button
